@@ -1,6 +1,0 @@
-redeemables: "&7Vous pouvez utiliser les codes suivants: &c%redeemables%"
-noPermissionForRedeemable: "&cVous ne pouvez pas utiliser ce code !"
-cannotRedeem: "&cVous ne pouvez plus utiliser ce code!"
-redeemed: "&aVous avez utilisé le code %redeemable%, vous pouvez encore l'utiliser %redeemableTimes% fois !"
-noPermission: "&cVous n'avez pas la permission de faire ça!"
-noRedeemables: "&cVous n'avez aucun code à utiliser!"
