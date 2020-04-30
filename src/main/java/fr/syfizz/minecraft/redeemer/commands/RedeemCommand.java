@@ -21,7 +21,7 @@ public class RedeemCommand implements CommandExecutor {
         if (args.length == 1) {
             if (redeemer.getRedeemables().contains(args[0])) {
                 if (!redeemer.hasRedeemablePermission((Player)sender, args[0])) {
-                    sendPlayerMessage(sender, "noPermissionForRedeemable");
+                    sendPlayerMessage(sender, "pasLaPermissionDeReclamer");
                     return true;
                 }
 
@@ -29,7 +29,7 @@ public class RedeemCommand implements CommandExecutor {
                 String[] deserialisedRedeemedData = redeemer.getRedeemedUser(args[0], ((Player) sender).getUniqueId()).split(":");
 
                 if (Integer.parseInt(deserialisedRedeemedData[1]) >= redeemableTimes) {
-                    sendPlayerMessage(sender, "cannotRedeem");
+                    sendPlayerMessage(sender, "impossibleDeReclamer");
                     return true;
                 }
 
@@ -43,7 +43,7 @@ public class RedeemCommand implements CommandExecutor {
             }
 
             if (!sender.hasPermission("redeemer.reload")) {
-                sendPlayerMessage(sender, "noPermission");
+                sendPlayerMessage(sender, "pasLaPermission");
                 return true;
             }
 
@@ -51,7 +51,7 @@ public class RedeemCommand implements CommandExecutor {
                 redeemer.reloadConfig();
                 redeemer.getConfig("messages");
                 redeemer.getConfig("data");
-                sendPlayerMessage(sender, "&8[&aRedeemer&8] &aSuccessfully reloaded configs!");
+                sendPlayerMessage(sender, "&8[&aRedeemer&8] &aConfiguration rechargée avec succès !");
                 return true;
             }
         }
@@ -74,7 +74,7 @@ public class RedeemCommand implements CommandExecutor {
         });
 
         if (stringBuilder.length() == 0) {
-            sendPlayerMessage(sender, "noRedeemables");
+            sendPlayerMessage(sender, "pasDeCode");
             return true;
         }
 
